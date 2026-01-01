@@ -10,23 +10,37 @@ readme = "README.md"
 authors = [{ name = "Sahan Lakshitha", email = "sahanlskh@gmail.com" }]
 maintainers = [{ name = "Sahan Lakshitha", email = "sahnlskh@gmail.com" }]
 license = { text = "MIT" }
+keywords = ["config", "settings", "yaml", "toml", "env", "configuration-management"]
 classifiers = [
-    "Programming Language :: Python :: 3",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 requires-python = ">=3.8"
-dependencies = [
-    "pytest>=8.3.5",
-]
-keywords = ["config", "settings", "environment", "yaml", "toml"]
+dependencies = []
 
 [project.optional-dependencies]
 yaml = ["PyYAML>=6.0"]
 toml = ["tomli>=2.0.0; python_version < '3.11'"]
 
-[project.urls]
-Homepage = "https://github.com/sahanlk/stack"
-
 [project.scripts]
 stack = "stack.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/sahanlk/stack"
+Documentation = "https://github.com/sahanlk/stack#readme"
+Repository = "https://github.com/sahanlk/stack.git"
+Issues = "https://github.com/sahanlk/stack/issues"
+
+[dependency-groups]
+dev = [
+    "flake8>=5.0.4",
+    "pytest>=8.3.5",
+    "ruff>=0.14.10",
+]
