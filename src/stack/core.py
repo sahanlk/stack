@@ -35,8 +35,10 @@ def unflatten_env(env_vars, prefix="STACK__"):
 
 
 def parse_value(val):
-    if val.lower() == "true": return True
-    if val.lower() == "false": return False
+    if val.lower() == "true":
+        return True
+    if val.lower() == "false":
+        return False
     try:
         return int(val)
     except ValueError:
