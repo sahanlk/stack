@@ -11,11 +11,11 @@ def parse_file(file_path):
     if suffix in [".yaml", ".yml"]:
         try:
             import yaml
+
             return yaml.safe_load(content)
         except ImportError:
             print("Warning: .yaml found but PyYAML not installed.")
             return {}
-
     return {}
 
 
@@ -33,5 +33,4 @@ def parse_env(content):
         if "=" in line:
             key, value = line.split("=", 1)
             env_dict[key.strip()] = value.strip().strip('"').strip("'")
-
     return env_dict

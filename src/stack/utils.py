@@ -1,4 +1,3 @@
-
 class ConfigBox:
     def __init__(self, data):
         self._data = data
@@ -13,5 +12,3 @@ class ConfigBox:
 
     def __repr__(self):
         return f"ConfigBox({self._data})"
-
-

@@ -1,4 +1,3 @@
-
 def deep_merge(base, override):
     """
     Recursively merges 'override' into 'base'.
@@ -11,7 +10,6 @@ def deep_merge(base, override):
     return base
 
 
-
 def unflatten_env(env_vars, prefix="STACK__"):
     """
     Turns {'STACK__DB__PORT': '5432'} into {'DB': {'PORT': 5432}}
@@ -20,7 +18,7 @@ def unflatten_env(env_vars, prefix="STACK__"):
 
     for key, value in env_vars.items():
         if key.startswith(prefix):
-            parts = key[len(prefix):].split("__")
+            parts = key[len(prefix) :].split("__")
 
             current = nested_dict
             for part in parts[:-1]:
@@ -46,15 +44,9 @@ def parse_value(val):
 
 
 if __name__ == "__main__":
-    defaults = {
-        "app": {"debug": False, "port": 8080},
-        "db": {"host": "localhost"}
-    }
+    defaults = {"app": {"debug": False, "port": 8080}, "db": {"host": "localhost"}}
 
-    user_settings = {
-        "app": {"debug": True},
-        "db": {"host": "prod-db"}
-    }
+    user_settings = {"app": {"debug": True}, "db": {"host": "prod-db"}}
 
     result = deep_merge(defaults, user_settings)
     print(result)
